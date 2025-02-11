@@ -1,0 +1,483 @@
+@import url("./css/buttons.css");
+@import url("./css/canvas.css");
+@import url("./css/deathvictoryscreen.css");
+@import url("./css/rotatescreen.css");
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(./img/bg.png);
+  background-color: #1a1a1a;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.startscreen {
+  display: flex;
+  width: auto;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+}
+
+.gba-Screen {
+  width: 495px;
+  /* height: 330px; */
+  display: none;
+  /* background-color: rgb(83, 83, 83); */
+  border-radius: 4px;
+  position: relative;
+  bottom: 614px;
+  right: 14px;
+  z-index: 9;
+  flex-direction: column-reverse;
+}
+
+.settings {
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: rgb(0, 0, 0);
+  border-radius: 3px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: -21px;
+  left: 0;
+  border-radius: 4px;
+}
+
+.closecross {
+  width: 40px !important;
+  height: 40px !important;
+  position: relative !important;
+  top: 25px !important;
+  left: 221px !important;
+  z-index: 9;
+  cursor: pointer;
+}
+
+.cross {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 25px !important;
+  left: 221px !important;
+  z-index: 9;
+  cursor: pointer;
+}
+
+.mobile-Startscreen {
+  display: none;
+}
+
+.mobile-settings {
+  display: none;
+}
+
+.mobile-button-container {
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
+  position: fixed;
+  bottom: 16px;
+  z-index: 10;
+}
+
+.mobile-button-container div {
+  display: flex;
+  gap: 8px;
+  padding: 0 32px;
+}
+
+.mobile-closecross {
+  display: none;
+}
+
+.mobileHeaderButtons {
+  width: 100%;
+  display: flex;
+  position: relative;
+  bottom: 0px;
+  right: 0px;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.impressumContainer {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  display: none;
+  flex-direction: column;
+  background-image: url(../img/5_background/layers/air.png);
+  background-size: cover;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.impressumContainer p {
+  margin-left: 8px;
+  margin-block-start: 0.1em;
+  margin-block-end: 0.1em;
+  font-family: "Bangers", serif;
+  font-weight: 400;
+}
+
+.impressumContainer h2 {
+  font-size: 32px;
+  margin-left: 8px;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  font-family: "Bangers", serif;
+  font-weight: 400;
+}
+
+.crossImpressum {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 9;
+  cursor: pointer;
+}
+@media only screen and (max-height: 770px) {
+  .mobileHeaderButtons {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 8px;
+    z-index: 1;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .gba {
+    width: 1000px;
+    display: flex;
+  }
+  .settings-button {
+    display: none;
+    right: 334px;
+    top: -190px;
+    font-size: 15px;
+    padding: 0 9px 6px 0;
+  }
+  .start-button {
+    display: none;
+    width: 110px;
+    right: 321px !important;
+    top: -273px !important;
+    font-size: 15px;
+    padding: 0 20px 7px 0;
+  }
+}
+
+@media only screen and (max-width: 1030px) {
+  .victoryimage {
+    top: 0 !important;
+  }
+  .deathimage {
+    top: 0 !important;
+  }
+  .impressumContainer {
+    position: relative;
+    top: auto !important;
+  }
+  .settings {
+    position: relative;
+    top: auto !important;
+  }
+  .reloadButton {
+    width: 50px;
+    height: 50px;
+  }
+  .menuButton {
+    width: 50px;
+    height: 50px;
+  }
+  .closecross {
+    top: 25px !important;
+    left: 180px !important;
+  }
+  .cross {
+    position: fixed;
+    top: 8px !important;
+    right: 8px;
+    left: unset !important;
+  }
+  .gba-Screen {
+    width: 420px;
+    bottom: 455px;
+    height: 280px !important;
+  }
+  .settings-button {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    right: 334px;
+    top: -190px;
+    font-size: 15px;
+    padding: 0 9px 6px 0;
+  }
+  .start-button {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    right: 321px;
+    top: -273px;
+    font-size: 15px;
+    padding: 0 20px 7px 0;
+  }
+  .gba {
+    width: 1000px;
+    display: flex;
+  }
+}
+@media only screen and (max-width: 1050px) {
+  canvas {
+    position: relative;
+    top: -74px;
+  }
+  .settings {
+    position: relative;
+    top: -74px;
+  }
+  .impressumContainer {
+    position: relative;
+    top: -74px;
+  }
+  .reloadButton {
+    width: 50px;
+    height: 50px;
+  }
+  .menuButton {
+    width: 50px;
+    height: 50px;
+  }
+  .victoryimage {
+    top: auto;
+  }
+  .deathimage {
+    top: auto;
+  }
+  .closecross {
+    top: 25px !important;
+    left: 180px !important;
+  }
+  .cross {
+    position: fixed;
+    top: 8px !important;
+    right: 8px;
+    left: unset !important;
+  }
+  .gba-Screen {
+    width: 420px;
+    bottom: 455px;
+    height: 280px !important;
+  }
+  .settings-button {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    right: 334px;
+    top: -190px;
+    font-size: 15px;
+    padding: 0 9px 6px 0;
+  }
+  .start-button {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    right: 321px;
+    top: -273px;
+    font-size: 15px;
+    padding: 0 20px 7px 0;
+  }
+  .gba {
+    width: 1000px;
+    display: flex;
+  }
+}
+
+@media only screen and (max-height: 770px) {
+  .closecross {
+    top: 25px !important;
+    left: 180px !important;
+  }
+  .cross {
+    position: fixed;
+    top: 8px !important;
+    right: 8px;
+    left: unset !important;
+  }
+  .gba-Screen {
+    width: 420px;
+    bottom: 531px;
+    height: 280px !important;
+  }
+  canvas {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+  }
+  .settings-button {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    right: 334px;
+    top: -190px;
+    font-size: 15px;
+    padding: 0 9px 6px 0;
+  }
+  .start-button {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    right: 321px;
+    top: -273px;
+    font-size: 15px;
+    padding: 0 20px 7px 0;
+  }
+  .gba {
+    width: 1000px;
+    display: flex;
+  }
+  .mobile-Startscreen {
+    display: flex;
+  }
+  .mobilescreen {
+    display: none;
+  }
+  .mobile-buttons {
+    position: fixed;
+    gap: 8px;
+    bottom: 8px;
+    right: 8px;
+    display: none !important;
+  }
+}
+/* Smartphone */
+@media only screen and (max-width: 990px) {
+  /* .start-button {
+    display: none;
+  }
+  .settings-button {
+    display: none;
+  }
+  .gba-Screen {
+    bottom: 546px;
+  } */
+  .gba {
+    display: none;
+  }
+}
+
+@media only screen and (max-height: 480px) {
+  .mobile-button-container {
+    width: 100vw;
+    position: absolute;
+    display: none;
+    justify-content: space-between;
+    bottom: 4px;
+    z-index: 10;
+  }
+
+  .mobile-buttons {
+    display: flex !important;
+  }
+
+  .mobile-button-container div {
+    display: flex;
+    gap: 8px;
+  }
+
+  .cross {
+    display: none;
+  }
+
+  .mobile-closecross {
+    display: block;
+    width: 42px !important;
+    border-radius: 0 !important;
+    border: none !important;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 99;
+  }
+  .mobile-settings {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000b8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+  }
+  .mobile-settings img {
+    width: 480px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.377);
+  }
+  .fullscreen {
+    display: none;
+  }
+  .mobile-Startscreen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mobilescreen {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+  }
+  body {
+    margin: 0;
+    height: auto;
+    padding: 0;
+  }
+  .gba-Screen {
+    position: unset;
+  }
+  .start-button {
+    display: none !important;
+  }
+  .settings-button {
+    display: none !important;
+  }
+  .impressum-button {
+    display: none;
+  }
+}

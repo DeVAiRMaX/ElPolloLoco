@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>El Pollo Loco</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="./img/elpolloloco.png" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="./img/elpolloloco.png"/>
+
+    <script src="./models/keyboard.class.js"></script>
+    <script src="./models/drawable-object.class.js"></script>
+    <script src="./models/status-bar.class.js"></script>
+    <script src="./models/bottle-bar.class.js"></script>
+    <script src="./models/coin-bar.class.js"></script>
+    <script src="./models/boss-bar.class.js"></script>
+    <script src="./models/movable-object.class.js"></script>
+    <script src="./models/character.class.js"></script>
+    <script src="./models/chicken.class.js"></script>
+    <script src="./models/smallchicken.class.js"></script>
+    <script src="./models/endboss.class.js"></script>
+    <script src="./models/clouds.class.js"></script>
+    <script src="./models/world.class.js"></script>
+    <script src="./models/background-object.class.js"></script>
+    <script src="./models/level.class.js"></script>
+    <script src="./models/coins.class.js"></script>
+    <script src="./models/bottle.class.js"></script>
+    <script src="./models/throwable-Object.class.js"></script>
+    <script src="./level/level1.js"></script>
+    <script src="./js/handelkeyaction.js"></script>
+    <script src="./js/game.js"></script>
+    
+  </head>
+  <body>
+    <!-- Mobile Playbuttons -->
+    <div class="mobile-button-container" id="mobileButtonContainer">
+      <div>
+        <button
+          onclick=""
+          class="mobile-leftbutton"
+          id="mobileLeftButton"
+        ></button>
+        <button
+          onclick=""
+          class="mobile-rightbutton"
+          id="mobileRightButton"
+        ></button>
+      </div>
+      <div>
+        <button
+          onclick="retry()"
+          class="mobile-restart"
+          id="mobileRestart"
+        ></button>
+        <button
+          onclick="fullMute()"
+          class="mobileMuteButton"
+          id="mobileMuteButton"
+        ></button>
+      </div>
+      <div>
+        <button onclick="" class="mobile-upbutton" id="mobileUpButton"></button>
+        <button
+          onclick=""
+          class="mobile-throwbutton"
+          id="mobileThrowButton"
+        ></button>
+        <button
+          onclick=""
+          class="mobile-healbutton"
+          id="mobileHealButton"
+        ></button>
+      </div>
+    </div>
+    <!-- Mobile Playbuttons End -->
+
+    <!-- Rotationscreen -->
+    <div class="rotateScreen" id="rotateScreen">
+      <h2>Please turn your phone!</h2>
+      <img class="rotated-phone" src="./img/smartphone.png" alt="" />
+    </div>
+    <!-- Rotationscreen End-->
+
+    <!-- Mobile -->
+    <div class="mobile-Startscreen">
+      <div id="mobileSettings" class="mobile-settings">
+        <img src="./img/settings.gif" alt="" />
+        <img
+          src="./img/cross.png"
+          alt=""
+          class="mobile-closecross"
+          onclick="closeMobileSettings()"
+        />
+      </div>
+      <div class="mobile-buttons" id="mobileStartSettingButtons">
+        <button onclick="startMobileGame()" class="mobile-startbutton"></button>
+        <button
+          onclick="mobileGameSettings()"
+          class="mobile-settingsbutton"
+        ></button>
+      </div>
+      <img class="mobilescreen" src="./img/startscreen.gif" alt="" />
+    </div>
+    <!-- Mobile End -->
+
+    <!-- Startscreen -->
+    <div class="startscreen">
+      <div class="gba-Screen" id="gbaScreen">
+        
+        <!-- Fullscreen-/Reloadbutton -->
+    <div class="mobileHeaderButtons" id="mobileHeaderButtons">
+      <button onclick="reloadPage()" class="menuButton" id="menuButton"></button>
+      <button onclick="retry()" class="reloadButton" id="reloadButton"></button>
+      <button
+        onclick="makeFullscreen()"
+        class="fullscreenButton"
+        id="fullscreenicon"
+      ></button>
+      
+      <button onclick="fullMute()" class="muteButton" id="muteButton"></button>
+      
+    </div>
+    <!-- Fullscreen-/Reloadbutton End-->
+
+        <div class="deathscreen" id="deathscreen">
+          <img
+            src="./img/cross.png"
+            alt=""
+            class="mobile-closecross"
+            onclick="reloadPage()"
+          />
+          <img
+            src="./img/cross.png"
+            alt=""
+            class="cross"
+            onclick="reloadPage()"
+          />
+          <img class="deathimage" src="./img/losescreen.jpg" alt="" />
+        </div>
+
+        <div class="victoryscreen" id="victoryscreen">
+          <img
+            src="./img/cross.png"
+            alt=""
+            class="mobile-closecross"
+            onclick="reloadPage()"
+          />
+          <img
+            src="./img/cross.png"
+            alt=""
+            class="cross"
+            onclick="reloadPage()"
+          />
+          <img class="victoryimage" src="./img/winscreen.jpg" alt="" />
+        </div>
+
+        <canvas id="canvas" width="720px" height="480px"></canvas>
+        <div class="impressumContainer" id="impressumContainer">
+          <h2>Impressum</h2>
+          <p>Maximilian Wagener</p>
+          <p>Wiesenrainsgarten 13</p>
+          <p>57234 Wilnsdorf</p>
+
+          <h2>Kontakt</h2>
+          <p>Telefon: 0172123456789</p>
+          <p>E-Mail: devmax@web.de</p>
+          <img
+            src="./img/cross.png"
+            alt=""
+            class="crossImpressum"
+            onclick="toggleImpressum()"
+          />
+        </div>
+        <div class="settings" id="settings">
+          <img
+            src="./img/cross.png"
+            alt=""
+            class="closecross"
+            onclick="closeSettings()"
+          />
+          <img src="./img/settings.gif" alt="" />
+        </div>
+      </div>
+
+      <button class="start-button" onclick="startGame()">Start</button>
+      <button class="settings-button" onclick="gameSettings()">Settings</button>
+
+      <img src="./img/gba.gif" alt="" class="gba" id="gbagif" />
+    </div>
+    <!-- Startscreen End -->
+
+    <button
+      class="impressum-button"
+      id="impressumButton"
+      onclick="toggleImpressum()"
+    ></button>
+  </body>
+</html>
